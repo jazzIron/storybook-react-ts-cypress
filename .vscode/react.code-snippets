@@ -1,0 +1,206 @@
+{
+	"Generate React-TS default Format": {
+		"prefix": "rtd",
+		"body": [
+			"export function ${TM_FILENAME_BASE}() {",
+			"  return (",
+			"    <div>",
+			"    </div>",
+			"  );",
+			"}",
+			"",
+		],
+		"description": "Generate React-TS-Emotion default Format"
+	},
+	"Generate React-TS default Format with styled component": {
+		"prefix": "rtds",
+		"body": [
+			"import styled from '@emotion/styled';",
+			"import { I${TM_FILENAME_BASE} } from './types';",
+			"",
+			"export function ${TM_FILENAME_BASE}(props: I${TM_FILENAME_BASE}) {",
+			"  return (",
+			"    <${TM_FILENAME_BASE}Styled>",
+			"    </${TM_FILENAME_BASE}Styled>",
+			"  );",
+			"}",
+			"",
+			"const ${TM_FILENAME_BASE}Styled = styled.div`",
+			"`",
+			"",
+			""
+		],
+		"description": "Generate React-TS-Emotion default Format"
+	},
+	"Generate React-TS Format without interface": {
+		"prefix": "rtdw",
+		"body": [
+			"import styled from '@emotion/styled';",
+			"",
+			"export function ${TM_FILENAME_BASE}() {",
+			"  return (",
+			"    <${TM_FILENAME_BASE}Styled>",
+			"    </${TM_FILENAME_BASE}Styled>",
+			"  );",
+			"}",
+			"",
+			"const ${TM_FILENAME_BASE}Styled = styled.div`",
+			"`",
+			"",
+			""
+		],
+		"description": "Generate React-TS-Emotion default Format"
+	},
+	"Generate React-Recoil-TS Format": {
+		"prefix": "rrt",
+		"body": [
+			"import { atom } from 'recoil';",
+			"",
+			"interface I${TM_FILENAME_BASE} {",
+				"id: string;",
+			"}",
+			"",
+			"const init${TM_FILENAME_BASE}: I${TM_FILENAME_BASE} = {",
+				"id: '',",
+			"};",
+			"",
+			"export const ${TM_FILENAME_BASE} = atom({",
+				"key: '${TM_FILENAME_BASE}',",
+				"default: init${TM_FILENAME_BASE},",
+			"});",
+			"",
+		],
+		"description": "Generate React-TS-Emotion default Format"
+	},
+	"Generate React-TS-Storybook default format": {
+		"prefix": "rtsd",
+		"body": [
+			"import { ComponentStory, ComponentMeta } from '@storybook/react';",
+			"import {${1:TM_FILENAME_BASE}} from './${1:TM_FILENAME_BASE}';",
+			"",
+			"export default {",
+			"  title: `Features/${1:TM_FILENAME_BASE}`,",
+			"  component: ${1:TM_FILENAME_BASE},",
+			"} as ComponentMeta<typeof ${1:TM_FILENAME_BASE}>;",
+			"",
+			"const Template: ComponentStory<typeof ${1:TM_FILENAME_BASE}> = (args) => <${1:TM_FILENAME_BASE} {...args} />;",
+			"",
+			"export const Default = Template.bind({});",
+			"Default.args = {",
+			"}",
+			""
+		],
+		"description": "Generate React-TS-Storybook default format"
+	},
+	"Generate React-TS-Emotion default Format": {
+		"prefix": "rted",
+		"body": [
+			"import styled from '@emotion/styled';",
+			"",
+			"interface I${TM_FILENAME_BASE} {",
+			"}",
+			"",
+			"export enum ${TM_FILENAME_BASE}Theme {",
+			"  Default = 'DEFAULT',",
+			"}",
+			"",
+			"const themeStyle: { [index: string]: any } = {",
+			"  [${TM_FILENAME_BASE}Theme.Default]: css``,",
+			"};",
+			"",
+			"const defaultTheme = css``;",
+			"",
+			"const style = (theme: ${TM_FILENAME_BASE}Theme) => css`",
+			"  ${${defaultTheme}}",
+			"  ${themeStyle[theme]}",
+			"`;",
+			"",
+			"export function ${TM_FILENAME_BASE}(props: I${TM_FILENAME_BASE}) {",
+			"  return (",
+			"    <div>",
+			"    </div>",
+			"  );",
+			"}",
+			""
+		],
+		"description": "Generate React-TS-Emotion default Format"
+	},
+	"Generate React-TS-Emotion default Format without theme": {
+		"prefix": "rtedwt",
+		"body": [
+			"import styled from '@emotion/styled';",
+			"",
+			"interface I${TM_FILENAME_BASE} {",
+			"}",
+			"",
+			"const style = () => css`",
+			"",
+			"`;",
+			"",
+			"export function ${TM_FILENAME_BASE}(props: I${TM_FILENAME_BASE}) {",
+			"  return (",
+			"    <div>",
+			"    </div>",
+			"  );",
+			"}",
+			""
+		],
+		"description": "Generate React-TS-Emotion default Format"
+	},
+	"Generate React-TS-Storybook Theme default format": {
+		"prefix": "rtstd",
+		"body": [
+			"import { withKnobs, text, select, boolean, number } from '@storybook/addon-knobs';",
+			"",
+			"import {${1:componentName}, ${1:componentName}Theme } from './${1:componentName}';",
+			"",
+			"const defaultTitle = 'Components';",
+			"",
+			"export default {",
+			"  title: `${${defaultTitle}}/${1:componentName}`,",
+			"  components: ${1:componentName},",
+			"  decorators: [withKnobs],",
+			"};",
+			"",
+			"export const Default = () => {",
+			"  const theme = select('Theme', ${1:componentName}Theme, ${1:componentName}Theme.Default);",
+			"  return (",
+			"    <${1:componentName} theme={theme}>",
+			"    </${1:componentName}>",
+			"  );",
+			"};",
+			"",
+			""
+		],
+		"description": "Generate React-TS-Storybook default format"
+	},
+	"Print to console.log": {
+    "prefix": "cl",
+    "body": ["console.log($0)"],
+    "description": "Print to console.log"
+  },
+	"Generate useState": {
+    "prefix": "rus",
+    "body": ["const [${1:stateName},set${1:stateName}] = useState<string>()"],
+    "description": "Print to console.log"
+  },
+
+	"Generate arrow function": {
+    "prefix": "arf",
+    "body": [
+			"= () => {",
+			"  $0",
+			"}",
+		],
+    "description": "Print to console.log"
+  },
+
+	"Generate useEffect": {
+    "prefix": "rue",
+		"body": [
+			"useEffect(() => {",
+			"}, [])"
+		],
+    "description": "Print useeffect"
+  },
+}
