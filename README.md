@@ -1,10 +1,13 @@
 <br/>
 <br/>
 
-# 스토리북 스터디 ✏
+# 스토리북 ✏
 
 - 리액트와 타입스크립트를 통해 아토믹 디자인 구현
 - 스토리북을 통한 시각화 작업
+
+# cypress 
+- E2E Test
 
 <br/>
 
@@ -20,6 +23,11 @@ yarn start
 ``` bash
 # storybook port 6006
 yarn storybook
+```
+
+- cypress 실행
+``` bash
+cypress:open
 ```
 
 <br/>
@@ -51,6 +59,7 @@ yarn storybook
   - Typescript 4.1.2
   - Emotion
   - craco
+  - cypress
   
 #### stoybook
 - Storybook은 비즈니스 로직과 컨텍스트로부터 UI 컴포넌트를 독립적으로 분리하여 만들수 있도록 도와줌 <br/>
@@ -70,6 +79,12 @@ https://emotion.sh/docs/styled
 - CRA로 만든 프로젝트는 eject을 통해 숨겨진 webpack 설정을 바꾸어야 하지만 craco를 사용하여 편리하게 수정 <br/>
 https://www.npmjs.com/package/@craco/craco
 https://github.com/risenforces/craco-alias#readme
+
+#### cypress
+- 차세대 프론트엔드 테스트도구
+- e2e테스트, 통합 테스트, 단위 테스트를 진행할 수 있습니다.
+
+https://www.cypress.io/
 
 <br/>
 <br/>
