@@ -1,41 +1,58 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { buttonList } from '.';
-
+import { BUTTON_SHAPE, BUTTON_SIZE, BUTTON_THEME } from '.';
 import { Button } from './Button';
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Button',
+  theme: BUTTON_THEME.DEFAULT,
+  size: BUTTON_SIZE.DEFAULT,
+  shape: BUTTON_SHAPE.DEFAULT,
+};
+
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
-  label: 'Button',
+  children: 'Button',
+  theme: BUTTON_THEME.PRIMARY,
+  size: BUTTON_SIZE.DEFAULT,
+  shape: BUTTON_SHAPE.DEFAULT,
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const Link = Template.bind({});
+Link.args = {
+  children: 'Link',
+  theme: BUTTON_THEME.LINK,
+  size: BUTTON_SIZE.DEFAULT,
+  shape: BUTTON_SHAPE.DEFAULT,
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
+export const Text = Template.bind({});
+Text.args = {
+  children: 'Text',
+  theme: BUTTON_THEME.TEXT,
+  size: BUTTON_SIZE.DEFAULT,
+  shape: BUTTON_SHAPE.DEFAULT,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Circle = Template.bind({});
+Circle.args = {
+  children: 'A',
+  theme: BUTTON_THEME.PRIMARY,
+  size: BUTTON_SIZE.DEFAULT,
+  shape: BUTTON_SHAPE.CIRCLE,
 };
 
-export const ButtonList = () => {
-  return <Button label={'testButton'} theme={buttonList.ROUNDED} />;
+export const Round = Template.bind({});
+Round.args = {
+  children: 'Round',
+  theme: BUTTON_THEME.PRIMARY,
+  size: BUTTON_SIZE.DEFAULT,
+  shape: BUTTON_SHAPE.ROUND,
 };

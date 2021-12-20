@@ -21,20 +21,13 @@ export const parameters = {
 
 addDecorator((story) => (
   <ThemeProvider theme={Themes}>
-    <div id={'root'}></div>
     <RecoilRoot>
       <GlobalStyle />
-      {/* <Router>
+      <Router>
         <Routes>
           <Route path="*" element={story()} />
         </Routes>
       </Router>
-      <Modal />
-      <Alert />
-      <Layer1 />
-      <Layer2 />
-      <Layer3 />
-      <Popup /> */}
     </RecoilRoot>
   </ThemeProvider>
 ));

@@ -1,31 +1,54 @@
-export enum buttonList {
-  ROUNDED = 'ROUNDED',
-  SQUARED = 'SQUARED',
+export enum BUTTON_THEME {
+  DEFAULT = 'DEFAULT',
+  PRIMARY = 'PRIMARY',
+  LINK = 'LINK',
+  TEXT = 'TEXT',
 }
 
-export interface ButtonProps {
+export enum BUTTON_SIZE {
+  DEFAULT = 'DEFAULT',
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  LARGE = 'LARGE',
+}
+
+export enum BUTTON_SHAPE {
+  DEFAULT = 'DEFAULT',
+  CIRCLE = 'CIRCLE',
+  ROUND = 'ROUND',
+}
+
+export interface IButton {
   /**
-   * Is this the principal call to action on the page?
+   * Button Theme
    */
-  primary?: boolean;
+  theme: BUTTON_THEME;
   /**
-   * What background color to use
+   * Button Size
    */
-  backgroundColor?: string;
+  size: BUTTON_SIZE;
   /**
-   * How large should the button be?
+   * Button shape for using Button Component
    */
-  size?: 'small' | 'medium' | 'large';
+  shape: BUTTON_SHAPE;
   /**
-   * Button theme for using Button Component
+   * Button background transparent and invert text, border colors
    */
-  theme: buttonList;
+  ghost: boolean;
   /**
-   * Button contents
+   * Option to fit button width (true: 100%, false: auto-fit)
    */
-  label: string;
+  block: boolean;
   /**
-   * Optional click handler
+   * button title
    */
-  onClick?: () => void;
+  children: JSX.Element | JSX.Element[] | string;
+  /**
+   * disabled
+   */
+  disabled?: boolean;
+  /**
+   * Optional Click handler
+   */
+  onClick: () => void;
 }

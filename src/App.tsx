@@ -1,7 +1,9 @@
-import React from 'react';
+import { ReactElement } from 'react';
+import { Themes } from './theme';
+import { ThemeProvider } from '@emotion/react';
 
-function App() {
-  return <div className='App'>테스트</div>;
+function App(): ReactElement {
+  return <ThemeProvider theme={Themes}></ThemeProvider>;
 }
 
 export default App;
