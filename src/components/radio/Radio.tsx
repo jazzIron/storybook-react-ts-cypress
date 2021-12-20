@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
 import { ChangeEvent } from 'react';
-import { IRadio, IRadioGroup, RADIO_SIZE } from './type';
+import { IRadioGroup, RADIO_SIZE } from './type';
 
 export function Radio({ size, disabled, name, options, value, onChange }: IRadioGroup) {
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -41,16 +41,15 @@ Radio.defaultProps = {
 };
 
 const RadioWrapper = styled.div`
-  margin: 0;
-  padding: 0;
-  color: rgba(0, 0, 0, 0.85);
-  list-style: none;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  > label:nth-of-type(2n + 1) {
+    margin: 0px 8px;
+  }
 `;
 
 const InputLabelWrapper = styled.label`
-  margin: 0;
-  padding: 0;
   color: rgba(0, 0, 0, 0.85);
   position: relative;
   display: inline-flex;
@@ -94,6 +93,17 @@ const RadioDefaultStyled = styled.span`
   outline: none;
   cursor: pointer;
   ::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #1890ff;
+    border-radius: 50%;
+    visibility: hidden;
+    animation: antRadioEffect 0.36s ease-in-out;
+    animation-fill-mode: both;
+    content: '';
   }
 
   & input[type='radio']:checked + span {
@@ -132,4 +142,22 @@ const RadioItemWrapper = styled.span`
   border-width: 1px;
   border-radius: 50%;
   transition: all 0.3s;
+  ::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    margin-left: -8px;
+    background-color: #1890ff;
+    border-top: 0;
+    border-left: 0;
+    border-radius: 16px;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+    content: ' ';
+  }
 `;
