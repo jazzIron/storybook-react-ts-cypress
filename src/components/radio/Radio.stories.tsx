@@ -9,11 +9,7 @@ export default {
 } as ComponentMeta<typeof Radio>;
 
 const Template: ComponentStory<typeof Radio> = (args) => {
-  const [{ value }, updateArgs] = useArgs();
-  const handleChange = (value: string) => {
-    updateArgs({ value: value });
-  };
-  return <Radio {...args} onChange={handleChange} />;
+  return <Radio {...args} />;
 };
 
 export const Default = Template.bind({});

@@ -1,8 +1,3 @@
-export enum DIRECTION {
-  HORIZONTAL = 'HORIZONTAL',
-  VERTICAL = 'VERTICAL',
-}
-
 export enum RADIO_SIZE {
   SMALL = 'SMALL',
   MEDIUM = 'MEDIUM',
@@ -19,7 +14,6 @@ export interface IRadio {
 
 export interface IRadioGroup {
   size: RADIO_SIZE;
-  direction?: DIRECTION;
   disabled: boolean;
   name: string;
   options: IRadio[];

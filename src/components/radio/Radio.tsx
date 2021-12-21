@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
 import { ChangeEvent } from 'react';
-import { IRadioGroup, RADIO_SIZE } from './type';
+import { IRadioGroup, RADIO_SIZE } from './types';
 
 export function Radio({ size, disabled, name, options, value, onChange }: IRadioGroup) {
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -12,7 +12,7 @@ export function Radio({ size, disabled, name, options, value, onChange }: IRadio
     <RadioWrapper>
       {options.map((option, idx) => {
         return (
-          <InputLabelWrapper key={idx}>
+          <InputLabelWrapper key={idx} disabled={option.disabled}>
             <RadioDefaultStyled>
               <RadioStyled
                 type="radio"
@@ -44,22 +44,28 @@ const RadioWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  > label:nth-of-type(2n + 1) {
-    margin: 0px 8px;
-  }
+  gap: 8px;
 `;
 
-const InputLabelWrapper = styled.label`
+const InputLabelWrapper = styled.label<{ disabled: boolean }>`
   color: rgba(0, 0, 0, 0.85);
   position: relative;
   display: inline-flex;
   align-items: baseline;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
+  pointer-events: ${(props) => (props.disabled ? 'none' : 'unset')};
   ::after {
     display: inline-block;
     width: 0;
     overflow: hidden;
     content: '\a0';
+  }
+  & span {
+    ${(props) =>
+      props.disabled &&
+      css`
+        color: #00000040;
+      `};
   }
 `;
 
@@ -77,9 +83,9 @@ const RadioStyled = styled.input`
   bottom: 0;
   left: 0;
   z-index: 1;
-  cursor: pointer;
   opacity: 0;
   overflow: visible;
+  cursor: pointer;
 `;
 
 const RadioDefaultStyled = styled.span`

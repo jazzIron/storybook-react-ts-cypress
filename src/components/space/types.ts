@@ -30,6 +30,10 @@ export interface ISpace {
    */
   size: SPACE_SIZE;
   /**
+   * items spacing size
+   */
+  gap: number;
+  /**
    * chilren Element
    */
   children: JSX.Element | JSX.Element[];
