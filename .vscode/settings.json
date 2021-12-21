@@ -1,5 +1,8 @@
 {
   "typescript.tsdk": "node_modules\\typescript\\lib",
+  "powermode.enabled": true,
+  "powermode.enableShake": false,
+  "powermode.presets": "flames",
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#eeb9a4",
     "titleBar.inactiveBackground": "#e9c7b9",
