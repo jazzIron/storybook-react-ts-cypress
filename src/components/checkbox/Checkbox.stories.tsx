@@ -9,11 +9,7 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 const Template: ComponentStory<typeof Checkbox> = (args) => {
-  const [{ value }, updateArgs] = useArgs();
-  const handleChange = (value: string) => {
-    updateArgs({ value: value });
-  };
-  return <Checkbox {...args} onChange={handleChange} />;
+  return <Checkbox {...args} />;
 };
 
 export const Default = Template.bind({});
