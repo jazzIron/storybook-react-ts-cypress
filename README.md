@@ -6,6 +6,9 @@
 - 리액트와 타입스크립트를 통해 아토믹 디자인 구현
 - 스토리북을 통한 시각화 작업
 
+# Jest
+- All-in-one 테스팅 lib
+
 # cypress 
 - E2E Test
 
@@ -25,9 +28,14 @@ yarn start
 yarn storybook
 ```
 
+- jest 실행
+``` bash
+yarn test:coverage
+```
+
 - cypress 실행
 ``` bash
-cypress:open
+yarn cypress:open
 ```
 
 <br/>
@@ -81,10 +89,15 @@ https://www.npmjs.com/package/@craco/craco
 https://github.com/risenforces/craco-alias#readme
 
 #### cypress
-- 차세대 프론트엔드 테스트도구
+- 차세대 프론트엔드 테스트도구 <br/>
 - e2e테스트, 통합 테스트, 단위 테스트를 진행할 수 있습니다.
-
 https://www.cypress.io/
+
+##### jest
+- All-in-one 테스트도구 <br/>
+- 단위 테스트 진행
+
+https://jestjs.io/
 
 <br/>
 <br/>
