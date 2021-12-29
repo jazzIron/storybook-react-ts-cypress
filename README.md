@@ -6,10 +6,10 @@
 - 리액트와 타입스크립트를 통해 아토믹 디자인 구현
 - 스토리북을 통한 시각화 작업
 
-# Jest
+# Jest 🛠
 - All-in-one 테스팅 lib
 
-# cypress 
+# cypress 🛠
 - E2E Test
 
 <br/>
