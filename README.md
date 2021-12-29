@@ -68,6 +68,7 @@ yarn cypress:open
   - Emotion
   - craco
   - cypress
+  - Jest
   
 #### stoybook
 - Storybook은 비즈니스 로직과 컨텍스트로부터 UI 컴포넌트를 독립적으로 분리하여 만들수 있도록 도와줌 <br/>
@@ -85,18 +86,17 @@ https://emotion.sh/docs/styled
 #### craco
 - Craco(Create React App Configuration Override)는 create-react-app(CRA)을 쉽게 설정 하기 위한 라이브러리 <br/>
 - CRA로 만든 프로젝트는 eject을 통해 숨겨진 webpack 설정을 바꾸어야 하지만 craco를 사용하여 편리하게 수정 <br/>
-https://www.npmjs.com/package/@craco/craco
+https://www.npmjs.com/package/@craco/craco <br/>
 https://github.com/risenforces/craco-alias#readme
 
 #### cypress
 - 차세대 프론트엔드 테스트도구 <br/>
-- e2e테스트, 통합 테스트, 단위 테스트를 진행할 수 있습니다.
+- e2e테스트, 통합 테스트, 단위 테스트를 진행할 수 있습니다. <br/>
 https://www.cypress.io/
 
 ##### jest
 - All-in-one 테스트도구 <br/>
-- 단위 테스트 진행
-
+- 단위 테스트 진행 <br/>
 https://jestjs.io/
 
 <br/>
