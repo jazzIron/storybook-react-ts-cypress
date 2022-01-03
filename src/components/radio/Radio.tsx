@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
 import { ChangeEvent } from 'react';
-import { IRadioGroup, RADIO_SIZE } from './types';
+import { IRadioGroup, RADIO_SIZE } from './Radio_types';
 
 export function Radio({ size, disabled, name, options, value, onChange }: IRadioGroup) {
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +40,7 @@ Radio.defaultProps = {
   value: '1',
 };
 
-const RadioWrapper = styled.div`
+export const RadioWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;

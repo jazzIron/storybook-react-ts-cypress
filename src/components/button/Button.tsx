@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
-import { IButton, BUTTON_THEME, BUTTON_SIZE, BUTTON_SHAPE } from './type';
+import { IButton, BUTTON_THEME, BUTTON_SIZE, BUTTON_SHAPE } from './Button_type';
 
 export function Button({ theme, size, shape, ghost, block, children, disabled, onClick }: IButton) {
   const themeStyle = btnThemeStyle[theme];

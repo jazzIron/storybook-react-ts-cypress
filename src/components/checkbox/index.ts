@@ -1,2 +1,2 @@
-export * from './CheckBox';
-export * from './types';
+export * from './Checkbox';
+export * from './CheckBox_types';

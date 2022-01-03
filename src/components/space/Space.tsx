@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
-import { ISpace, SPACE_DIRECTION, SPACE_ALIGN } from './types';
+import { ISpace, SPACE_DIRECTION, SPACE_ALIGN } from './Space_types';
 import { toLower } from 'lodash';
 
-export function Space({ direction, align, size, gap, children }: ISpace) {
+export function Space({ direction, align, gap, children }: ISpace) {
   return (
-    <SpaceWrapper direction={direction} align={align} size={size} gap={gap}>
+    <SpaceWrapper direction={direction} align={align} gap={gap}>
       <div>스페이스 테스트</div>
       <div>스페이스 테스트2</div>
       {children}
@@ -16,7 +16,7 @@ export function Space({ direction, align, size, gap, children }: ISpace) {
 Space.defaultProps = {
   direction: SPACE_DIRECTION.HORIZONTAL,
   align: SPACE_ALIGN.CENTER,
-  size: 'radioTest',
+  size: 'SpaceTest',
   gap: 0,
   children: `children 테스트 영역`,
 };

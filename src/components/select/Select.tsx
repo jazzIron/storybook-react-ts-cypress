@@ -1,19 +1,20 @@
 import styled from '@emotion/styled';
-import { css, SerializedStyles, keyframes } from '@emotion/react';
-import { ISelect, SELECT_SIZE, ISelectOptions } from './types';
+import { css, SerializedStyles } from '@emotion/react';
+import { ISelect, SELECT_SIZE, ISelectOptionItems } from './Select_types';
 import { useState } from 'react';
 import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai';
+import { SelectOption } from './SelectOption';
 
 export function Select({ size, disabled, options, placeholder, onChange }: ISelect) {
   const sizeStyle = selectSizeStyle[size];
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<ISelectOptions>();
+  const [selectedOption, setSelectedOption] = useState<ISelectOptionItems>();
 
   const handleToggle = () => {
     !disabled && setIsOpen((prev) => !prev);
   };
 
-  const handleChangeOption = (option: ISelectOptions) => () => {
+  const handleChangeOption = (option: ISelectOptionItems) => {
     setSelectedOption(option);
     handleToggle();
     return onChange(option);
@@ -25,24 +26,9 @@ export function Select({ size, disabled, options, placeholder, onChange }: ISele
         <DropDownLabelWrapper>
           {selectedOption ? selectedOption.label : placeholder}
         </DropDownLabelWrapper>
-        <DropDownIconWrapper>{isOpen ? <AiOutlineDown /> : <AiOutlineUp />}</DropDownIconWrapper>
+        <DropDownIconWrapper>{isOpen ? <AiOutlineUp /> : <AiOutlineDown />}</DropDownIconWrapper>
       </DropDownHeader>
-      {isOpen && (
-        <DropDownListWrapper>
-          <DropDownListStyled>
-            {options.map((option) => (
-              <ListItem
-                sizeStyle={sizeStyle}
-                onClick={handleChangeOption(option)}
-                key={option.id}
-                disabled={option.disabled}
-              >
-                {option.label}
-              </ListItem>
-            ))}
-          </DropDownListStyled>
-        </DropDownListWrapper>
-      )}
+      {isOpen && <SelectOption size={sizeStyle} options={options} onChange={handleChangeOption} />}
     </DropDownWrapper>
   );
 }
@@ -89,29 +75,4 @@ const DropDownLabelWrapper = styled.div``;
 const DropDownIconWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const DropDownListWrapper = styled.div``;
-
-const DropDownListStyled = styled.ul`
-  padding: 0;
-  margin: 0;
-  background: #ffffff;
-  border: 1px solid #d9d9d9;
-  box-sizing: border-box;
-  color: #000;
-  &:first-of-type {
-    border-top: 0;
-  }
-`;
-
-const ListItem = styled.li<{ sizeStyle: SerializedStyles; disabled: boolean }>`
-  list-style: none;
-  ${(props) =>
-    props.disabled &&
-    css`
-      opacity: 0.4;
-      pointer-events: none;
-    `}
-  ${(props) => props.sizeStyle};
 `;

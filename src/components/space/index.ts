@@ -1,2 +1,2 @@
-export * from './types';
+export * from './Space_types';
 export * from './Space';

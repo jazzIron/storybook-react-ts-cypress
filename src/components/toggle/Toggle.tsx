@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { css, SerializedStyles } from '@emotion/react';
-import { IToggle, TOGGLE_SIZE } from './types';
+import { IToggle, TOGGLE_SIZE } from './Toggle_types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 

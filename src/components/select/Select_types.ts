@@ -1,3 +1,5 @@
+import { SerializedStyles } from '@emotion/react';
+
 export enum SELECT_SIZE {
   SMALL = 'SMALL',
   MEDIUM = 'MEDIUM',
@@ -20,7 +22,7 @@ export interface ISelect {
   /**
    * Select options
    */
-  options: ISelectOptions[];
+  options: ISelectOptionItems[];
   /**
    * Placeholder of select
    */
@@ -28,10 +30,25 @@ export interface ISelect {
   /**
    * input value change
    */
-  onChange: (value: ISelectOptions) => void;
+  onChange: (value: ISelectOptionItems) => void;
 }
 
-export interface ISelectOptions {
+export interface ISelectOption {
+  /**
+   * Size of Select input
+   */
+  size: SerializedStyles;
+  /**
+   * Select options
+   */
+  options: ISelectOptionItems[];
+  /**
+   * input value change
+   */
+  onChange: (value: ISelectOptionItems) => void;
+}
+
+export interface ISelectOptionItems {
   id: string;
   label: string;
   value: string;

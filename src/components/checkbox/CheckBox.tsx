@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ICheckboxGroup } from './types';
+import { ICheckboxGroup } from './CheckBox_types';
 import { css, SerializedStyles } from '@emotion/react';
 import { useState } from 'react';
 

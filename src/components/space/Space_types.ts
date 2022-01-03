@@ -10,12 +10,6 @@ export enum SPACE_ALIGN {
   BASELINE = 'BASELINE',
 }
 
-export enum SPACE_SIZE {
-  SMALL = 'SMALL',
-  MEDIUM = 'MEDIUM',
-  LARGE = 'LARGE',
-}
-
 export interface ISpace {
   /**
    * The space direction
@@ -25,10 +19,6 @@ export interface ISpace {
    * Align items
    */
   align: SPACE_ALIGN;
-  /**
-   * The space size
-   */
-  size: SPACE_SIZE;
   /**
    * items spacing size
    */

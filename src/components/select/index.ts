@@ -1,2 +1,2 @@
-export * from './types';
+export * from './Select_types';
 export * from './Select';
